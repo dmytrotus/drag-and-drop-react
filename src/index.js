@@ -13,7 +13,16 @@ const Container = styled.div`
 class App extends React.Component{
 	state = initialData;
 
+	onDragStart = () => {
+		document.body.style.color = 'orange';
+	};
+
+
+
 	onDragEnd = result => {
+
+		document.body.style.color = 'inherit';
+
 		const { destination, source, draggableId } = result;
 		if(!destination) {
 			return;
@@ -50,6 +59,10 @@ class App extends React.Component{
 	render(){
 		return (
 			<DragDropContext
+			onDragStart={this.onDragStart}
+			onDragUpdate={this.onDragUpdate}
+
+			//onDragEnd Is Required
 			onDragEnd={this.onDragEnd}>
 			<Container>
 		{this.state.columnOrder.map((columnId) => {
