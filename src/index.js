@@ -95,6 +95,7 @@ class App extends React.Component{
 	};
 
 	render(){
+		console.log(this.state.columns)
 		return (
 			<DragDropContext
 			onDragStart={this.onDragStart}
