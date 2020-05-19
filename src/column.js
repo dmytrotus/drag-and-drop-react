@@ -18,7 +18,7 @@ padding: 8px;
 const TaskList = styled.div`
 padding: 8px;
 transition: background-color 0.2s ease;
-background-color: ${props => (props.isDraggingOver ? 'skyblue' : 'white')};
+background-color: ${props => (props.isDraggingOver ? '#f6f6f666' : 'white')};
 flex-grow: 1;
 min-height: 100px;
 `;
